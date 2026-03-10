@@ -14,7 +14,7 @@ class Database
 
             $config = require __DIR__ . "/../../config/database.php";
 
-            $dsn = "mysql:host={$config['host']};dbname={$config['dbname']}";
+            $dsn = "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};charset=utf8mb4";
 
             self::$connection = new PDO($dsn, $config["user"], $config["password"]);
         }

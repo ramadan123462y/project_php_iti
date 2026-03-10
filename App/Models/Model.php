@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Core\Database;
+use App\Core\QueryBuilder;
 
 class Model
 {
@@ -26,5 +27,10 @@ class Model
         $stmt->execute([$id]);
 
         return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
+    public static function create($data)
+    {
+            return QueryBuilder::table(static::$table)->insert($data);
+
     }
 }

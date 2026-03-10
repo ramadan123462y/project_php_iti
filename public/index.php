@@ -1,9 +1,6 @@
 <?php
-
 use App\Core\Router;
 
-require "../App/Core/Router.php";
-require "../App/Core/Request.php";
 require "../App/helpers.php";
 
 spl_autoload_register(function ($class) {
@@ -15,5 +12,7 @@ spl_autoload_register(function ($class) {
 });
 
 require "../routes/web.php";
+
+
 
 Router::resolve();

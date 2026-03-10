@@ -4,14 +4,7 @@
 
 <p>
     <b>Name:</b>
-    <?= $user["first_name"] ?>
-    <?= $user["last_name"] ?>
+    <?= $user["name"] ?>
 </p>
 
-<p><b>Username:</b> <?= $user["user_name"] ?></p>
-
-<p><b>Address:</b> <?= $user["address"] ?></p>
-
-<p><b>Gender:</b> <?= $user["gender"] ?></p>
-
-<p><b>Department:</b> <?= $user["department"] ?></p>
+<p><b>Email:</b> <?= $user["email"] ?></p>

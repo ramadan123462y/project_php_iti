@@ -5,9 +5,13 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Username</th>
-        <th>Department</th>
-        <th>Action</th>
+        <th>email</th>
+        <th>Room Id</th>
+        <th>Role</th>
+        <th>Ext</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
 
     <?php foreach ($users as $user): ?>
@@ -16,21 +20,36 @@
 
             <td><?= $user["id"] ?></td>
 
-            <td>
-                <?= $user["first_name"] ?>
-                <?= $user["last_name"] ?>
-            </td>
 
-            <td><?= $user["user_name"] ?></td>
+            <td> <?= $user["name"] ?></td>
+            <td><?= $user["email"] ?></td>
+            <td> <?= $user["room_id"] ?></td>
+            <td><?= $user["role"] ?></td>
+            <td><?= $user["ext"] ?></td>
 
-            <td><?= $user["department"] ?></td>
+
+
+
+
 
             <td>
                 <a href="<?= url("users/{$user["id"]}")  ?>">View</a>
             </td>
+            <td>
+                <a href="<?= url("users/{$user['id']}/edit") ?>">Edit</a>
+            </td>
+            <td>
+                <form action="<?= url("users/{$user['id']}/delete") ?>" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+
 
         </tr>
 
+
     <?php endforeach; ?>
 
+
 </table>
+<a href="<?= url('users/create') ?>">Add User</a>
