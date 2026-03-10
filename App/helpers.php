@@ -2,8 +2,12 @@
 
 function url($path = '')
 {
-    $base = "/ITI_PHP/php-project/public";
+    $base = dirname($_SERVER['SCRIPT_NAME']);
 
-    return $base . "/" . trim($path, "/");
+    return rtrim($base, '/') . '/' . ltrim($path, '/');
 }
-
+function redirect($path = '')
+{
+    header("Location: ".url($path));
+    exit;
+}

@@ -1,8 +1,9 @@
 <?php
 
 return [
-    "host" => "localhost",
-    "dbname" => "iti_company",
+    "host" => "127.0.0.1",
+    "port" => "3306",
+    "dbname" => "ITICafeteria",
     "user" => "root",
     "password" => ""
 ];

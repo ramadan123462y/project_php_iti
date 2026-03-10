@@ -20,6 +20,7 @@ class Router
 
     public static function resolve()
     {
+        
         $uri = Request::uri(); //user/20
 
      

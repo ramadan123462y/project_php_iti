@@ -4,16 +4,18 @@ namespace App\Core;
 
 class Request
 {
-    public static function uri()
-    {
-        $uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+ public static function uri()
+{
+    $uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
-        $base = "/ITI_PHP/php-project/public";
+    $base = dirname($_SERVER["SCRIPT_NAME"]);
 
-        $uri = str_replace($base, "", $uri);
-
-        return trim($uri, "/");
+    if ($base !== '/' && str_starts_with($uri, $base)) {
+        $uri = substr($uri, strlen($base));
     }
+
+    return "/" . trim($uri, "/");
+}
 
     public static function method()
     {
